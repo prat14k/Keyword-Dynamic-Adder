@@ -19,13 +19,17 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PocketTagsAddDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="53I-fs-4BN"/>
+                        <viewControllerLayoutGuide type="bottom" id="p9z-ha-vEK"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="RuA-LR-Mwq">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="RuA-LR-Mwq">
                                 <rect key="frame" x="20" y="84" width="335" height="250"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.42613389756944442" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="CG1-pS-kGW"/>
                                 </constraints>
@@ -45,6 +49,7 @@
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RRa-JW-ed5">
                                                     <rect key="frame" x="0.0" y="10" width="126" height="30"/>
+                                                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <color key="textColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -53,9 +58,8 @@
                                         </view>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="RRa-JW-ed5" secondAttribute="trailing" id="6iR-rp-xOp"/>
-                                            <constraint firstAttribute="bottom" secondItem="RRa-JW-ed5" secondAttribute="bottom" constant="10" id="Llx-V1-f1N"/>
                                             <constraint firstItem="RRa-JW-ed5" firstAttribute="leading" secondItem="q1W-mb-yrX" secondAttribute="leading" id="Tdh-d7-x2k"/>
-                                            <constraint firstItem="RRa-JW-ed5" firstAttribute="top" secondItem="q1W-mb-yrX" secondAttribute="top" constant="10" id="TeR-05-FPr"/>
+                                            <constraint firstItem="RRa-JW-ed5" firstAttribute="centerY" secondItem="q1W-mb-yrX" secondAttribute="centerY" id="bgk-9r-WPR"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="textField" destination="RRa-JW-ed5" id="jHr-qg-r83"/>
@@ -68,8 +72,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="126" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o89-wp-wOG">
-                                                    <rect key="frame" x="12" y="7" width="102" height="36"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o89-wp-wOG">
+                                                    <rect key="frame" x="6" y="4" width="114" height="42"/>
                                                     <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -77,11 +81,16 @@
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="o89-wp-wOG" secondAttribute="bottom" constant="7" id="0v4-ZD-7S7"/>
-                                            <constraint firstAttribute="trailing" secondItem="o89-wp-wOG" secondAttribute="trailing" constant="12" id="GoX-uH-Csc"/>
-                                            <constraint firstItem="o89-wp-wOG" firstAttribute="leading" secondItem="4eR-hW-3Wh" secondAttribute="leading" constant="12" id="PFZ-CL-Ckh"/>
-                                            <constraint firstItem="o89-wp-wOG" firstAttribute="top" secondItem="4eR-hW-3Wh" secondAttribute="top" constant="7" id="lJk-ml-Ez6"/>
+                                            <constraint firstAttribute="bottom" secondItem="o89-wp-wOG" secondAttribute="bottom" constant="4" id="0v4-ZD-7S7"/>
+                                            <constraint firstAttribute="trailing" secondItem="o89-wp-wOG" secondAttribute="trailing" constant="6" id="GoX-uH-Csc"/>
+                                            <constraint firstItem="o89-wp-wOG" firstAttribute="leading" secondItem="4eR-hW-3Wh" secondAttribute="leading" constant="6" id="PFZ-CL-Ckh"/>
+                                            <constraint firstItem="o89-wp-wOG" firstAttribute="top" secondItem="4eR-hW-3Wh" secondAttribute="top" constant="4" id="lJk-ml-Ez6"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="textLabel" destination="o89-wp-wOG" id="hMl-0k-DHF"/>
                                         </connections>
@@ -91,15 +100,16 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="RuA-LR-Mwq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="MZg-1N-A3k"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="RuA-LR-Mwq" secondAttribute="trailing" constant="20" id="qTO-Y9-Fcm"/>
-                            <constraint firstItem="RuA-LR-Mwq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="vNr-xO-wE4"/>
+                            <constraint firstItem="RuA-LR-Mwq" firstAttribute="top" secondItem="53I-fs-4BN" secondAttribute="bottom" constant="20" id="MZg-1N-A3k"/>
+                            <constraint firstAttribute="trailing" secondItem="RuA-LR-Mwq" secondAttribute="trailing" constant="20" id="qTO-Y9-Fcm"/>
+                            <constraint firstItem="RuA-LR-Mwq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="vNr-xO-wE4"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <viewLayoutGuide key="safeArea" id="ayE-kv-cUp"/>
                     </view>
                     <navigationItem key="navigationItem" title="Tags Adder" id="6WV-SN-Qbf"/>
                     <connections>
                         <outlet property="collectionView" destination="RuA-LR-Mwq" id="cXL-ix-29l"/>
+                        <outlet property="heightCollectionViewContraint" destination="CG1-pS-kGW" id="BnS-bW-e0m"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
