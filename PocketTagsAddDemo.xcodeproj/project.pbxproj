@@ -1,0 +1,355 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BB6B23B1200B3FF300389BB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6B23B0200B3FF300389BB3 /* AppDelegate.swift */; };
+		BB6B23B3200B3FF300389BB3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6B23B2200B3FF300389BB3 /* ViewController.swift */; };
+		BB6B23B6200B3FF300389BB3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB6B23B4200B3FF300389BB3 /* Main.storyboard */; };
+		BB6B23B8200B3FF300389BB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB6B23B7200B3FF300389BB3 /* Assets.xcassets */; };
+		BB6B23BB200B3FF300389BB3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB6B23B9200B3FF300389BB3 /* LaunchScreen.storyboard */; };
+		BB6B23C3200B449700389BB3 /* InputCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6B23C2200B449700389BB3 /* InputCollectionViewCell.swift */; };
+		BB6B23C5200B44BB00389BB3 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6B23C4200B44BB00389BB3 /* CollectionViewCell.swift */; };
+		BB6B23C9200B4C4C00389BB3 /* UICollectionViewLeftAlignedLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = BB6B23C7200B4C4C00389BB3 /* UICollectionViewLeftAlignedLayout.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		BB6B23AD200B3FF300389BB3 /* PocketTagsAddDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PocketTagsAddDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB6B23B0200B3FF300389BB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BB6B23B2200B3FF300389BB3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BB6B23B5200B3FF300389BB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BB6B23B7200B3FF300389BB3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BB6B23BA200B3FF300389BB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BB6B23BC200B3FF300389BB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BB6B23C2200B449700389BB3 /* InputCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputCollectionViewCell.swift; sourceTree = "<group>"; };
+		BB6B23C4200B44BB00389BB3 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		BB6B23C6200B4C4B00389BB3 /* PocketTagsAddDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PocketTagsAddDemo-Bridging-Header.h"; sourceTree = "<group>"; };
+		BB6B23C7200B4C4C00389BB3 /* UICollectionViewLeftAlignedLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICollectionViewLeftAlignedLayout.m; sourceTree = "<group>"; };
+		BB6B23C8200B4C4C00389BB3 /* UICollectionViewLeftAlignedLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICollectionViewLeftAlignedLayout.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BB6B23AA200B3FF300389BB3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BB6B23A4200B3FF300389BB3 = {
+			isa = PBXGroup;
+			children = (
+				BB6B23AF200B3FF300389BB3 /* PocketTagsAddDemo */,
+				BB6B23AE200B3FF300389BB3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BB6B23AE200B3FF300389BB3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BB6B23AD200B3FF300389BB3 /* PocketTagsAddDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BB6B23AF200B3FF300389BB3 /* PocketTagsAddDemo */ = {
+			isa = PBXGroup;
+			children = (
+				BB6B23CA200B4F0A00389BB3 /* LeftAlignLayoutFiles */,
+				BB6B23B0200B3FF300389BB3 /* AppDelegate.swift */,
+				BB6B23B2200B3FF300389BB3 /* ViewController.swift */,
+				BB6B23B4200B3FF300389BB3 /* Main.storyboard */,
+				BB6B23C2200B449700389BB3 /* InputCollectionViewCell.swift */,
+				BB6B23C4200B44BB00389BB3 /* CollectionViewCell.swift */,
+				BB6B23B7200B3FF300389BB3 /* Assets.xcassets */,
+				BB6B23B9200B3FF300389BB3 /* LaunchScreen.storyboard */,
+				BB6B23BC200B3FF300389BB3 /* Info.plist */,
+				BB6B23C6200B4C4B00389BB3 /* PocketTagsAddDemo-Bridging-Header.h */,
+			);
+			path = PocketTagsAddDemo;
+			sourceTree = "<group>";
+		};
+		BB6B23CA200B4F0A00389BB3 /* LeftAlignLayoutFiles */ = {
+			isa = PBXGroup;
+			children = (
+				BB6B23C8200B4C4C00389BB3 /* UICollectionViewLeftAlignedLayout.h */,
+				BB6B23C7200B4C4C00389BB3 /* UICollectionViewLeftAlignedLayout.m */,
+			);
+			path = LeftAlignLayoutFiles;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BB6B23AC200B3FF300389BB3 /* PocketTagsAddDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BB6B23BF200B3FF300389BB3 /* Build configuration list for PBXNativeTarget "PocketTagsAddDemo" */;
+			buildPhases = (
+				BB6B23A9200B3FF300389BB3 /* Sources */,
+				BB6B23AA200B3FF300389BB3 /* Frameworks */,
+				BB6B23AB200B3FF300389BB3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PocketTagsAddDemo;
+			productName = PocketTagsAddDemo;
+			productReference = BB6B23AD200B3FF300389BB3 /* PocketTagsAddDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BB6B23A5200B3FF300389BB3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Prateek Sharma";
+				TargetAttributes = {
+					BB6B23AC200B3FF300389BB3 = {
+						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = BB6B23A8200B3FF300389BB3 /* Build configuration list for PBXProject "PocketTagsAddDemo" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BB6B23A4200B3FF300389BB3;
+			productRefGroup = BB6B23AE200B3FF300389BB3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BB6B23AC200B3FF300389BB3 /* PocketTagsAddDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BB6B23AB200B3FF300389BB3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB6B23BB200B3FF300389BB3 /* LaunchScreen.storyboard in Resources */,
+				BB6B23B8200B3FF300389BB3 /* Assets.xcassets in Resources */,
+				BB6B23B6200B3FF300389BB3 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BB6B23A9200B3FF300389BB3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB6B23B3200B3FF300389BB3 /* ViewController.swift in Sources */,
+				BB6B23C3200B449700389BB3 /* InputCollectionViewCell.swift in Sources */,
+				BB6B23C5200B44BB00389BB3 /* CollectionViewCell.swift in Sources */,
+				BB6B23B1200B3FF300389BB3 /* AppDelegate.swift in Sources */,
+				BB6B23C9200B4C4C00389BB3 /* UICollectionViewLeftAlignedLayout.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		BB6B23B4200B3FF300389BB3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BB6B23B5200B3FF300389BB3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BB6B23B9200B3FF300389BB3 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BB6B23BA200B3FF300389BB3 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BB6B23BD200B3FF300389BB3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BB6B23BE200B3FF300389BB3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BB6B23C0200B3FF300389BB3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = PocketTagsAddDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = prat14k.PocketTagsAddDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PocketTagsAddDemo/PocketTagsAddDemo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BB6B23C1200B3FF300389BB3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = PocketTagsAddDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = prat14k.PocketTagsAddDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PocketTagsAddDemo/PocketTagsAddDemo-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BB6B23A8200B3FF300389BB3 /* Build configuration list for PBXProject "PocketTagsAddDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB6B23BD200B3FF300389BB3 /* Debug */,
+				BB6B23BE200B3FF300389BB3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BB6B23BF200B3FF300389BB3 /* Build configuration list for PBXNativeTarget "PocketTagsAddDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB6B23C0200B3FF300389BB3 /* Debug */,
+				BB6B23C1200B3FF300389BB3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BB6B23A5200B3FF300389BB3 /* Project object */;
+}
