@@ -10,6 +10,9 @@ import UIKit
 
 class CollectionViewCell: UICollectionViewCell {
     
+    let selectedColor = UIColor(red: 44.0/255.0, green: 167.0/255.0, blue: 158.0/255.0, alpha: 1.0)
+    let unSelectedColor = UIColor.lightGray
+
     @IBOutlet weak var textLabel: UILabel!
     
     func setCellUI(withText text: String, selected : Bool){
@@ -17,10 +20,10 @@ class CollectionViewCell: UICollectionViewCell {
         textLabel.text = text
             
         if selected {
-            backgroundColor = UIColor.green
+            backgroundColor = selectedColor
         }
         else{
-            backgroundColor = UIColor.lightGray
+            backgroundColor = unSelectedColor
         }
         
     }

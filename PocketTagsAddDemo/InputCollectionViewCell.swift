@@ -10,6 +10,6 @@ import UIKit
 
 class InputCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var textField: CustomTextField!
     
 }

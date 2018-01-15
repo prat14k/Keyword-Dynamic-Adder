@@ -8,9 +8,9 @@
 
 import UIKit
 
-let collectionViewBorderSpace : CGFloat = 4
-let collectionViewRowMidSpace : CGFloat = 4
-let collectionViewRowsSpace : CGFloat = 4
+let collectionViewBorderSpace : CGFloat = 7
+let collectionViewRowMidSpace : CGFloat = 5
+let collectionViewRowsSpace : CGFloat = 5
 
 class ViewController: UIViewController {
 
@@ -53,12 +53,31 @@ class ViewController: UIViewController {
         
     }
     
+    func selectTagCell(atIndex index : Int){
+        if index < enteredTags.count {
+            var indexPathsArr = [IndexPath]()
+            if selectedInd != nil {
+                if index == selectedInd {
+                    return
+                }
+                
+                indexPathsArr.append(IndexPath(item: selectedInd, section: 0))
+                selectedInd = nil
+            }
+            selectedInd = index
+            indexPathsArr.append(IndexPath(item: selectedInd, section: 0))
+            collectionView.reloadItems(at: indexPathsArr)
+        }
+    }
 }
 
 extension ViewController : UICollectionViewDataSource, UICollectionViewDelegateLeftAlignedLayout {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        if indexPath.row < enteredTags.count {
+            inputFieldCell.textField.text = ""
+            selectTagCell(atIndex: indexPath.row)
+        }
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -75,6 +94,7 @@ extension ViewController : UICollectionViewDataSource, UICollectionViewDelegateL
             if inputFieldCell == nil {
                 inputFieldCell = collectionView.dequeueReusableCell(withReuseIdentifier: "inputCell", for: indexPath) as! InputCollectionViewCell
                 inputFieldCell.textField.delegate = self
+                inputFieldCell.textField.deleteDelegate = self
             }
             return inputFieldCell
         }
@@ -101,19 +121,19 @@ extension ViewController : UICollectionViewDataSource, UICollectionViewDelegateL
             var width = self.collectionView.frame.width - (collectionViewBorderSpace * 2)
         
             if presentXposition != collectionViewBorderSpace {
-                if (width - (presentXposition + collectionViewRowMidSpace)) > 80 {
-                    width = width - (presentXposition + collectionViewBorderSpace)
+                if (width - (presentXposition + collectionViewRowMidSpace - collectionViewBorderSpace)) > 80 {
+                    width = width - (presentXposition - collectionViewBorderSpace + collectionViewRowMidSpace)
                 }
             }
             
             presentXposition = collectionViewBorderSpace
-            return CGSize(width: width, height: 32)
+            return CGSize(width: width, height: 28)
         }
         else{
             var calculatedSize = estimatedFrameForText(enteredTags[indexPath.row]).size
             var height : CGFloat
             if calculatedSize.height < 25 {
-                height = 32
+                height = 28
             }
             else{
                 // The Label has a 4 + 4 Vertical Padding and a 6 + 6 Horizontal Padding (7+7 is to provide a bit extra space)
@@ -126,7 +146,7 @@ extension ViewController : UICollectionViewDataSource, UICollectionViewDelegateL
             }
             presentXposition = presentXposition + calculatedSize.width + 14
             if presentXposition > (collectionView.frame.size.width - collectionViewBorderSpace) {
-                presentXposition = calculatedSize.width + 14
+                presentXposition = collectionViewBorderSpace + calculatedSize.width + 14
             }
             
             return CGSize(width: calculatedSize.width + 14, height: height)
@@ -135,7 +155,7 @@ extension ViewController : UICollectionViewDataSource, UICollectionViewDelegateL
     
     private func estimatedFrameForText(_ text : String) -> CGRect{
         let size = CGSize(width: (self.collectionView.frame.width - (collectionViewBorderSpace * 2)), height: 1000)
-        return NSString(string: text).boundingRect(with: size, options: [NSStringDrawingOptions.usesLineFragmentOrigin , .usesFontLeading], attributes: [NSAttributedStringKey.font : UIFont(name: "Helvetica", size: 16)!], context: nil)
+        return NSString(string: text).boundingRect(with: size, options: [NSStringDrawingOptions.usesLineFragmentOrigin , .usesFontLeading], attributes: [NSAttributedStringKey.font : UIFont(name: "Helvetica", size: 15)!], context: nil)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
@@ -151,13 +171,16 @@ extension ViewController : UICollectionViewDataSource, UICollectionViewDelegateL
     }
 }
 
-extension ViewController : UITextFieldDelegate {
+extension ViewController : UITextFieldDelegate , DeleteActionProtocol {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if let text = textField.text , text != "" {
             enteredTags.append(text)
             
-            collectionView.reloadData()
+//            collectionView.reloadData()
+            
+            collectionView.insertItems(at: [IndexPath(item: enteredTags.count-1, section: 0)])
+//            collectionView.reloadItems(at: [IndexPath(item: enteredTags.count, section: 0)])
             
             setCollectionViewHght()
             
@@ -169,11 +192,19 @@ extension ViewController : UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if string != "" {
-            if (textField.text?.count)! >= 25 {
+            if (textField.text?.count)! >= 50 {
                 return false
             }
         }
+        
         return true
     }
+    
+    func deleteAction() {
+        if enteredTags.count > 0 {
+            selectTagCell(atIndex: enteredTags.count - 1)
+        }
+    }
+    
 }
 

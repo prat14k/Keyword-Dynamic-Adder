@@ -15,6 +15,7 @@
 		BB6B23C3200B449700389BB3 /* InputCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6B23C2200B449700389BB3 /* InputCollectionViewCell.swift */; };
 		BB6B23C5200B44BB00389BB3 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6B23C4200B44BB00389BB3 /* CollectionViewCell.swift */; };
 		BB6B23C9200B4C4C00389BB3 /* UICollectionViewLeftAlignedLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = BB6B23C7200B4C4C00389BB3 /* UICollectionViewLeftAlignedLayout.m */; };
+		BBBDA234200C97B00083103A /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBDA233200C97B00083103A /* CustomTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		BB6B23C6200B4C4B00389BB3 /* PocketTagsAddDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PocketTagsAddDemo-Bridging-Header.h"; sourceTree = "<group>"; };
 		BB6B23C7200B4C4C00389BB3 /* UICollectionViewLeftAlignedLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICollectionViewLeftAlignedLayout.m; sourceTree = "<group>"; };
 		BB6B23C8200B4C4C00389BB3 /* UICollectionViewLeftAlignedLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICollectionViewLeftAlignedLayout.h; sourceTree = "<group>"; };
+		BBBDA233200C97B00083103A /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				BB6B23B9200B3FF300389BB3 /* LaunchScreen.storyboard */,
 				BB6B23BC200B3FF300389BB3 /* Info.plist */,
 				BB6B23C6200B4C4B00389BB3 /* PocketTagsAddDemo-Bridging-Header.h */,
+				BBBDA233200C97B00083103A /* CustomTextField.swift */,
 			);
 			path = PocketTagsAddDemo;
 			sourceTree = "<group>";
@@ -160,6 +163,7 @@
 			files = (
 				BB6B23B3200B3FF300389BB3 /* ViewController.swift in Sources */,
 				BB6B23C3200B449700389BB3 /* InputCollectionViewCell.swift in Sources */,
+				BBBDA234200C97B00083103A /* CustomTextField.swift in Sources */,
 				BB6B23C5200B44BB00389BB3 /* CollectionViewCell.swift in Sources */,
 				BB6B23B1200B3FF300389BB3 /* AppDelegate.swift in Sources */,
 				BB6B23C9200B4C4C00389BB3 /* UICollectionViewLeftAlignedLayout.m in Sources */,
