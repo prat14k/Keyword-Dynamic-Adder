@@ -8,15 +8,20 @@
 
 import UIKit
 
+let collectionViewBorderSpace : CGFloat = 4
+let collectionViewRowMidSpace : CGFloat = 4
+let collectionViewRowsSpace : CGFloat = 4
+
 class ViewController: UIViewController {
 
+    
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var heightCollectionViewContraint: NSLayoutConstraint!
     
     var inputFieldCell : InputCollectionViewCell! = nil
 //    var lastTagCell : CollectionViewCell! = nil
     
-    var presentXposition : CGFloat! = 4
+    var presentXposition : CGFloat! = collectionViewBorderSpace
     
     var enteredTags = [String]()
 
@@ -32,8 +37,8 @@ class ViewController: UIViewController {
         
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         setCollectionViewHght()
     }
@@ -42,7 +47,7 @@ class ViewController: UIViewController {
         
         heightCollectionViewContraint.constant = collectionView.collectionViewLayout.collectionViewContentSize.height
         
-        UIView.animate(withDuration: 0.2) {
+        UIView.animate(withDuration: 0.3) {
             self.view.layoutIfNeeded()
         }
         
@@ -84,10 +89,6 @@ extension ViewController : UICollectionViewDataSource, UICollectionViewDelegateL
                 }
             }
             
-//            if indexPath.row == ( enteredTags.count - 1 ) {
-//                lastTagCell = cell
-//            }
-            
             cell.setCellUI(withText: enteredTags[indexPath.row], selected: isSelected)
             
             return cell
@@ -97,22 +98,15 @@ extension ViewController : UICollectionViewDataSource, UICollectionViewDelegateL
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if indexPath.row == enteredTags.count {
-            var width = self.collectionView.frame.width - 4
-            
-//            if(lastTagCell != nil) {
-//                let remainingWidth = width - (lastTagCell.frame.origin.x + 3)
-//                if remainingWidth >= 60 {
-//                    width = remainingWidth
-//                }
-//            }
-
-            if presentXposition != 4 {
-                if (width - (presentXposition + 3)) > 60 {
-                    width = width - (presentXposition + 4)
+            var width = self.collectionView.frame.width - (collectionViewBorderSpace * 2)
+        
+            if presentXposition != collectionViewBorderSpace {
+                if (width - (presentXposition + collectionViewRowMidSpace)) > 80 {
+                    width = width - (presentXposition + collectionViewBorderSpace)
                 }
             }
             
-            presentXposition = 4
+            presentXposition = collectionViewBorderSpace
             return CGSize(width: width, height: 32)
         }
         else{
@@ -122,16 +116,17 @@ extension ViewController : UICollectionViewDataSource, UICollectionViewDelegateL
                 height = 32
             }
             else{
+                // The Label has a 4 + 4 Vertical Padding and a 6 + 6 Horizontal Padding (7+7 is to provide a bit extra space)
                 height = calculatedSize.height + 8
                 calculatedSize.width = collectionView.frame.size.width - 14 - 8
             }
             
-            if presentXposition != 4 {
-                presentXposition = presentXposition + 4
+            if presentXposition != collectionViewBorderSpace {
+                presentXposition = presentXposition + collectionViewRowMidSpace
             }
             presentXposition = presentXposition + calculatedSize.width + 14
-            if presentXposition > (collectionView.frame.size.width - 4) {
-                presentXposition = 4 + calculatedSize.width + 14
+            if presentXposition > (collectionView.frame.size.width - collectionViewBorderSpace) {
+                presentXposition = calculatedSize.width + 14
             }
             
             return CGSize(width: calculatedSize.width + 14, height: height)
@@ -139,20 +134,20 @@ extension ViewController : UICollectionViewDataSource, UICollectionViewDelegateL
     }
     
     private func estimatedFrameForText(_ text : String) -> CGRect{
-        let size = CGSize(width: self.collectionView.frame.width - 8, height: 1000)
+        let size = CGSize(width: (self.collectionView.frame.width - (collectionViewBorderSpace * 2)), height: 1000)
         return NSString(string: text).boundingRect(with: size, options: [NSStringDrawingOptions.usesLineFragmentOrigin , .usesFontLeading], attributes: [NSAttributedStringKey.font : UIFont(name: "Helvetica", size: 16)!], context: nil)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 4)
+        return UIEdgeInsets(top: collectionViewBorderSpace, left: collectionViewBorderSpace, bottom: collectionViewBorderSpace, right: collectionViewBorderSpace)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 3
+        return collectionViewRowsSpace
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 4
+        return collectionViewRowMidSpace
     }
 }
 
