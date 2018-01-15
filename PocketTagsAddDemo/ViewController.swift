@@ -35,12 +35,20 @@ class ViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(closeKeyboard))
+        tapGesture.numberOfTapsRequired = 1
+        view.addGestureRecognizer(tapGesture)
+        
+        heightCollectionViewContraint.constant = collectionView.collectionViewLayout.collectionViewContentSize.height
+        view.layoutIfNeeded()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        setCollectionViewHght()
+    }
+    
+    @objc func closeKeyboard(){
+        inputFieldCell.textField.resignFirstResponder()
     }
     
     func setCollectionViewHght(){
@@ -53,21 +61,40 @@ class ViewController: UIViewController {
         
     }
     
-    func selectTagCell(atIndex index : Int){
-        if index < enteredTags.count {
-            var indexPathsArr = [IndexPath]()
-            if selectedInd != nil {
-                if index == selectedInd {
-                    return
+    func selectTagCell(atIndex index : Int!){
+        
+        var indexPathsArr = [IndexPath]()
+        
+        if index != nil {
+            if index < enteredTags.count {
+                if selectedInd != nil {
+                    if index == selectedInd {
+                        return
+                    }
+                    indexPathsArr.append(IndexPath(item: selectedInd, section: 0))
+                    selectedInd = nil
                 }
                 
+                inputFieldCell.textField.tintColor = UIColor.clear
+                
+                selectedInd = index
                 indexPathsArr.append(IndexPath(item: selectedInd, section: 0))
-                selectedInd = nil
             }
-            selectedInd = index
+        }
+        else if selectedInd != nil {
             indexPathsArr.append(IndexPath(item: selectedInd, section: 0))
+            selectedInd = nil
+        }
+        
+        if indexPathsArr.count > 0 {
             collectionView.reloadItems(at: indexPathsArr)
         }
+    }
+    
+    @objc func textFieldTapped(_ gesture : UIGestureRecognizer){
+        inputFieldCell.textField.tintColor = UIColor.green
+        inputFieldCell.textField.becomeFirstResponder()
+        selectTagCell(atIndex: nil)
     }
 }
 
@@ -95,6 +122,11 @@ extension ViewController : UICollectionViewDataSource, UICollectionViewDelegateL
                 inputFieldCell = collectionView.dequeueReusableCell(withReuseIdentifier: "inputCell", for: indexPath) as! InputCollectionViewCell
                 inputFieldCell.textField.delegate = self
                 inputFieldCell.textField.deleteDelegate = self
+                
+                let tapGesture = UITapGestureRecognizer(target: self, action: #selector(textFieldTapped(_:)))
+                tapGesture.numberOfTapsRequired = 1
+                inputFieldCell.textField.addGestureRecognizer(tapGesture)
+                
             }
             return inputFieldCell
         }
@@ -173,6 +205,8 @@ extension ViewController : UICollectionViewDataSource, UICollectionViewDelegateL
 
 extension ViewController : UITextFieldDelegate , DeleteActionProtocol {
     
+    
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if let text = textField.text , text != "" {
             enteredTags.append(text)
@@ -186,14 +220,29 @@ extension ViewController : UITextFieldDelegate , DeleteActionProtocol {
             
             textField.text = ""
         }
+        else{
+            textField.resignFirstResponder()
+        }
         
+        if selectedInd != nil {
+            selectTagCell(atIndex: nil)
+        }
         return true
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if string != "" {
+            textField.tintColor = UIColor.green
             if (textField.text?.count)! >= 50 {
                 return false
+            }
+            
+            if selectedInd != nil && enteredTags.count > 0 {
+                enteredTags.remove(at: selectedInd)
+                let ind = selectedInd
+                selectedInd = nil
+                collectionView.deleteItems(at: [IndexPath(item: ind!, section: 0)])
+                setCollectionViewHght()
             }
         }
         
@@ -201,6 +250,16 @@ extension ViewController : UITextFieldDelegate , DeleteActionProtocol {
     }
     
     func deleteAction() {
+        if selectedInd != nil && enteredTags.count > 0 {
+            enteredTags.remove(at: selectedInd)
+            let ind = selectedInd
+            selectedInd = nil
+            collectionView.deleteItems(at: [IndexPath(item: ind!, section: 0)])
+            setCollectionViewHght()
+            inputFieldCell.textField.tintColor = UIColor.green
+            return
+        }
+        
         if enteredTags.count > 0 {
             selectTagCell(atIndex: enteredTags.count - 1)
         }

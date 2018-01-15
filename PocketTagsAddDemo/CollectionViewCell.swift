@@ -20,9 +20,11 @@ class CollectionViewCell: UICollectionViewCell {
         textLabel.text = text
             
         if selected {
+            becomeFirstResponder()
             backgroundColor = selectedColor
         }
         else{
+            resignFirstResponder()
             backgroundColor = unSelectedColor
         }
         
